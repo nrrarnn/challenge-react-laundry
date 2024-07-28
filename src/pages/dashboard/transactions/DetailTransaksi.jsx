@@ -1,11 +1,12 @@
 import { Button, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@nextui-org/react";
 
 export const DetailTransaksi = ({customerDataTransaction, onBackPage}) => {
+  // untuk mengubah format tanggal
   const formatDate = (dateString) => {
   const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
     return new Date(dateString).toLocaleDateString('en-CA', options); 
   };
-
+  // mengambil angka 8 digit saja
   const formatCustomerCode = (code) => {
     return code.slice(0, 8);
   };

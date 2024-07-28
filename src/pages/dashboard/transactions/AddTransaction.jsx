@@ -29,12 +29,12 @@ export const AddTransaction = ({isOpen, onOpenChange, onAddTransaction}) => {
   }
 
   const handleAddTransaction = async () => {
+    // mendapatkan nilai input dari form secara realtime
     const customerIdTr = watch('customerIdTr');
     const productId = watch('productId');
     const qty = watch('qty');
-    console.log("Customer id", customerIdTr)
-    console.log("Product id", productId)
-    console.log('qty', qty)
+    
+    // masukin ke dalam variabel payload buat data post ke api nya
     const payload = {
      customerId: customerIdTr,
      billDetails: [

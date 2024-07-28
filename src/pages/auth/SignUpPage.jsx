@@ -3,7 +3,6 @@ import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { axiosInstance } from "../../services/axios";
-import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
@@ -40,9 +39,7 @@ export const SignUpPage = () => {
       const response = await axiosInstance.post('/auth/register',{...userData, role: 'employee'})
       console.log(response.data)
       toast.success("Register successfully")
-      navigate('/sign-in')
-
-      
+      navigate('/sign-in')  
     } catch (error) {
       if(error.code) {
         toast.error("invalid username or password");
@@ -51,7 +48,6 @@ export const SignUpPage = () => {
       }
       toast.error(error.message);
     }
-
   }
 
   return(

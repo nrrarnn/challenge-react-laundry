@@ -28,10 +28,9 @@ const token = useSelector((store) => store.auth.token)
       handleCreateProduct(response.data)
       toast.success("Product added")
       reset()
-      onOpenChange(false)
+      onOpenChange(false) 
     } catch (error) {
-      console.error(error);
-      toast.error('Failed to add product');
+      toast.error('Only Admin can add product')
     }
   };
 

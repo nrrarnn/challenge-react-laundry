@@ -3,7 +3,7 @@ import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { axiosInstance } from "../../services/axios";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
@@ -15,7 +15,6 @@ const loginSchema = z.object({
 export const SignInPage = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const token = useSelector((store) => store.auth)
 
   const form = useForm({
     defaultValues: {

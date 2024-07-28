@@ -115,7 +115,7 @@ export const Produk = () => {
         <div className="p-6">
           <Button onPress={onOpen} className="bg-indigo-500 text-white font-semibold">Add</Button>
         </div>
-
+        
         <AddProductModal isOpen={isOpen} onOpenChange={onOpenChange} handleCreateProduct={handleCreateProduct}/>
 
         <div className="flex p-5">
